@@ -22,7 +22,7 @@ class FlynUseWPComLibraries
     public static function rewriteSrc(string $src, string $handle): string
     {
         if (self::$site_url === '') {
-            self::$site_url = trailingslashit(site_url());
+            self::$site_url = site_url('/');
         }
 
         if (strpos($src, self::$site_url . 'wp-includes') === 0 ||
